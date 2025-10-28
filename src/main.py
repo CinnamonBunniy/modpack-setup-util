@@ -16,7 +16,8 @@ def main():
 
     # Create a Pywebview window loading the HTML file
     window = webview.create_window("Hello World", url=f"file://{html_file}")
-    webview.start(custom_logic, window)
+    webview.settings["OPEN_DEVTOOLS_IN_DEBUG"] = False
+    webview.start(custom_logic, window, debug=True)
 
 if __name__ == '__main__':
     main()
